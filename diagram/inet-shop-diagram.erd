@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram version="1" name="inet-shop-diagram.erd">
+	<entities>
+		<data-source id="mysql5-1704d766308-410b72357344a83e">
+			<entity id="1" name="catalogs" fq-name="`inet-shop`.catalogs" order="0" x="354" y="257">
+				<path name="inet-shop"/>
+			</entity>
+			<entity id="2" name="event" fq-name="`inet-shop`.event" order="1" x="20" y="227">
+				<path name="inet-shop"/>
+			</entity>
+			<entity id="3" name="orders" fq-name="`inet-shop`.orders" order="2" x="202" y="60">
+				<path name="inet-shop"/>
+			</entity>
+			<entity id="4" name="orders_products" fq-name="`inet-shop`.orders_products" order="3" x="20" y="40">
+				<path name="inet-shop"/>
+			</entity>
+			<entity id="5" name="outlets" fq-name="`inet-shop`.outlets" order="4" x="20" y="454">
+				<path name="inet-shop"/>
+			</entity>
+			<entity id="6" name="products" fq-name="`inet-shop`.products" order="5" x="202" y="207">
+				<path name="inet-shop"/>
+			</entity>
+			<entity id="7" name="storehouses" fq-name="`inet-shop`.storehouses" order="6" border-width="3" x="181" y="432">
+				<path name="inet-shop"/>
+			</entity>
+			<entity id="8" name="storehouses_products" fq-name="`inet-shop`.storehouses_products" order="7" x="343" y="425">
+				<path name="inet-shop"/>
+			</entity>
+			<entity id="9" name="users" fq-name="`inet-shop`.users" order="8" x="354" y="20">
+				<path name="inet-shop"/>
+			</entity>
+		</data-source>
+	</entities>
+	<relations>
+		<relation name="products_ibfk_1" fq-name="`inet-shop`.products.products_ibfk_1" type="fk" pk-ref="1" fk-ref="6"/>
+		<relation name="orders_products_ibfk_1" fq-name="`inet-shop`.orders_products.orders_products_ibfk_1" type="fk" pk-ref="3" fk-ref="4"/>
+		<relation name="event_ibfk_1" fq-name="`inet-shop`.event.event_ibfk_1" type="fk" pk-ref="6" fk-ref="2"/>
+		<relation name="orders_products_ibfk_2" fq-name="`inet-shop`.orders_products.orders_products_ibfk_2" type="fk" pk-ref="6" fk-ref="4"/>
+		<relation name="orders_ibfk_1" fq-name="`inet-shop`.orders.orders_ibfk_1" type="fk" pk-ref="9" fk-ref="3"/>
+	</relations>
+</diagram>
